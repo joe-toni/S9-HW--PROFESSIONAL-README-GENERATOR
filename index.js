@@ -67,38 +67,58 @@ function init()
         else
         {
         var result = 
-        `# ${res.ProjectName}
-    
-        ## Description
-         ${res.Description}
+`
+# ${res.ProjectName}    
+        
+##  Description
+${res.Description}
 
-        ## Table of Contents
-        [Installation](#installation)
-        [Usage](#usage)
-        [Testing](#testing)
-        [Contributing](#contributing)
-        [Questions](#questions)
-        [License](#license)
+-----
 
-        ### Installation
-        ${res.Installation}
+## Table of Contents
+-[Installation](#installation)
+-[Usage](#usage)
+-[Testing](#testing)
+-[Contributing](#contributing)
+-[Questions](#questions)
+-[License](#license)
 
-        ### Usage
-        ${res.Usage}
+---
 
-        ### Tests
-        ${res.Tests}
+### Installation
 
-        ### Contributing
-        ${res.Contributing}
+${res.Installation}
 
-        ### Questions
-        Visit my GitHub account to see other works or Send me an Email with any questions.
-        GitHub: https://${res.UserName}
-        Email: ${res.Email}
+---
 
-        ### License
-        ${res.License}`;
+### Usage
+
+${res.Usage}
+
+---
+
+### Testing
+
+ ${res.Tests}
+
+ ---
+
+ ### Contributing
+
+${res.Contributing}
+
+---
+
+### Questions
+
+If you'd like to see more of my work feel free to check out my [GitHub](https://github.com/${res.UserName}) account.
+Or if you have any questions you can contact me at this [Email](mailto:${res.Email}) Address.
+
+---
+
+### License
+${res.License}
+`;
         writeToFile("README.md", result);
         }
     }) ;
