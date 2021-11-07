@@ -1,6 +1,9 @@
 // TODO: Include packages needed for this application
 const inq = require('inquirer');
 const fs = require('fs');
+const li = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
+console.log(li);
 // TODO: Create an array of questions for user input
 const questions = 
 [
@@ -46,8 +49,14 @@ const questions =
     },
     {
         name:"License",
-        type:"input",
-        message:"I have no idea how to implement this one tbh."
+        type:"choices",
+        message:"I have no idea how to implement this one tbh.",
+        choices:[
+            {name: 'GNU GPLv3', value: "GNU"},
+            {name:'MIT License', value: "MIT"},
+            {name:'The Unlicense', value: "Unlicense"},
+            {name:'None', value: "None"}
+        ]
     }
 ];
 
@@ -66,59 +75,7 @@ function init()
         {console.log(err);}
         else
         {
-        var result = 
-`
-# ${res.ProjectName}    
-        
-##  Description
-${res.Description}
-
------
-
-## Table of Contents
--[Installation](#installation)
--[Usage](#usage)
--[Testing](#testing)
--[Contributing](#contributing)
--[Questions](#questions)
--[License](#license)
-
----
-
-### Installation
-
-${res.Installation}
-
----
-
-### Usage
-
-${res.Usage}
-
----
-
-### Testing
-
- ${res.Tests}
-
- ---
-
- ### Contributing
-
-${res.Contributing}
-
----
-
-### Questions
-
-If you'd like to see more of my work feel free to check out my [GitHub](https://github.com/${res.UserName}) account.
-Or if you have any questions you can contact me at this [Email](mailto:${res.Email}) Address.
-
----
-
-### License
-${res.License}
-`;
+        var result = generateMarkdown(res);
         writeToFile("README.md", result);
         }
     }) ;
