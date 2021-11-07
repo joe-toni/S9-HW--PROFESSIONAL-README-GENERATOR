@@ -49,14 +49,10 @@ const questions =
     },
     {
         name:"License",
-        type:"choices",
+        type:"list",
         message:"I have no idea how to implement this one tbh.",
-        choices:[
-            {name: 'GNU GPLv3', value: "GNU"},
-            {name:'MIT License', value: "MIT"},
-            {name:'The Unlicense', value: "Unlicense"},
-            {name:'None', value: "None"}
-        ]
+        choices:['GNU GPLv3','MIT License','The Unlicense','None']
+
     }
 ];
 
@@ -75,6 +71,7 @@ function init()
         {console.log(err);}
         else
         {
+        
         var result = generateMarkdown(res);
         writeToFile("README.md", result);
         }

@@ -4,16 +4,16 @@ function renderLicenseBadge(license)
 {
   switch(license)
   {
-    case 'GNU':
+    case 'GNU GPLv3':
       return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
-    case 'MIT':
+    case 'MIT License':
       return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-    case 'Unlicense':
+    case 'The Unlicense':
         return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
     default:
         return "";
   }
-};
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -21,11 +21,11 @@ function renderLicenseLink(license)
 {
   switch(license)
   {
-    case 'GNU':
+    case 'GNU GPLv3':
       return "https://www.gnu.org/licenses/gpl-3.0";
-    case 'MIT':
+    case 'MIT License':
       return "https://opensource.org/licenses/MIT";
-    case 'Unlicense':
+    case 'The Unlicense':
         return "https://unlicense.org/";
     default:
         return "";
@@ -38,11 +38,11 @@ function renderLicenseSection(license)
 {
   switch(license)
   {
-    case 'GNU':
+    case 'GNU GPLv3':
       return "Licensed under the GNU GPLv3 License.";
-    case 'MIT':
+    case 'MIT License':
       return "Licensed under the MIT License.";
-    case 'Unlicense':
+    case 'The Unlicense':
         return "Licensed under The Unlicense";
     default:
         return "";
@@ -55,6 +55,8 @@ function generateMarkdown(data)
   var result = 
 `
 # ${data.ProjectName}    
+
+${renderLicenseBadge(data.License)}
         
 ##  Description
 ${data.Description}
@@ -103,7 +105,10 @@ Or if you have any questions you can contact me at this [Email](mailto:${data.Em
 ---
 
 ### License
-${data.License}
+
+${renderLicenseSection(data.License)}
+For more details visit: ${renderLicenseLink(data.License)}
+
 `;
 
 return result;
