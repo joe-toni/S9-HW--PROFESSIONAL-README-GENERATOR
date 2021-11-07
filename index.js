@@ -54,7 +54,7 @@ const questions =
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) 
 {
-    fs.writeFile("README.md", )
+    fs.writeFile(fileName, data, (err) => {if(err)throw err;});
 }
 
 // TODO: Create a function to initialize app
@@ -62,6 +62,10 @@ function init()
 {
     inq.prompt(questions).then((res, err) => 
     {
+        if (err)
+        {console.log(err);}
+        else
+        {
         var result = 
         `# ${res.ProjectName}
     
@@ -94,8 +98,11 @@ function init()
         Email: ${res.Email}
 
         ### License
-        ${res.License}`
-    })    
+        ${res.License}`;
+        writeToFile("README.md", result);
+        }
+    }) ;
+    
 }
 
 // Function call to initialize app
