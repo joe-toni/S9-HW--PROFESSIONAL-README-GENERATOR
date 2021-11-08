@@ -45,7 +45,7 @@ The application used the github repository license-badges.md by user lukas-h for
 ### Questions
 
 If you'd like to see more of my work feel free to check out my [GitHub](https://github.com/joe-toni) account.
-Or if you have any questions you can contact me at this [Email](mailto:joefaburrieta@gmial.com) Address.
+Or if you have any questions you can contact me at this [Email](mailto:joefaburrieta@gmail.com) Address.
 
 ---
 
