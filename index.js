@@ -49,7 +49,7 @@ const questions =
     {
         name:"License",
         type:"list",
-        message:"I have no idea how to implement this one tbh.",
+        message:"What license would you like to apply to your application?",
         choices:['GNU GPLv3','MIT License','The Unlicense','None']
 
     }
