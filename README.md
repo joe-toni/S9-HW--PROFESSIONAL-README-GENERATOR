@@ -4,7 +4,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
         
 ##  Description
-This readme file was generated using the finished application for example purposes. The application will use a command line interface to prompt a user into providing the information needed to fill out a readme template. The application will then take a generated string and use it to write a markdown file named README.md with in the local directory. It will either overwrite the contents of an existing readme file or create on in none exists.
+This readme file was generated using the finished application for example purposes. The application will use a command line interface to prompt a user into providing the information needed to fill out a readme template. The application will then take a generated string and use it to write a markdown file named README.md with in the local directory. It will either overwrite the contents of an existing readme file or create on in none exists.See the link below for a demonstration on how the program works.
+
+https://watch.screencastify.com/v/A6M6cMOOL0PZIHk51Gwo
 
 -----
 
